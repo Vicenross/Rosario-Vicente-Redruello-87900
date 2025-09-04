@@ -109,12 +109,23 @@ header {
 
 
 main {
+    padding-top: 20px;
+    padding-bottom: 100px;
+
     h1.minombre {
         position: absolute;
         top: 35vh;
         justify-self: center;
         color: #fff;
         text-shadow: 5px 5px 18px black;
+        font-size: 5rem;
+        font-weight: 900;
+        background: rgba(26, 22, 22, 0.27);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(11.4px);
+        padding: 5px 50px;
+
     }
 
     section.videospatch {
@@ -140,7 +151,7 @@ footer {
     max-width: 100% !important;
     box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.12);
     padding: 40px;
-    margin-top: 150px;
+
 
     div.redes {
         @include flexbox (row, center, center);
@@ -150,7 +161,6 @@ footer {
             @extend %icono-tamaño;
             color: #E1306C;
         }
-
 
         .fa-behance {
             @extend %icono-tamaño;
@@ -180,6 +190,9 @@ footer {
     }
 
     main {
+        padding-top: 20px;
+        padding-bottom: 40px;
+
         section.videospatch {
             margin: 40px auto;
 
@@ -201,13 +214,12 @@ footer {
             top: 35vh;
             justify-self: center;
             color: #fff;
-            text-shadow: 5px 5px 18px black;
             font-size: 30px;
             text-align: center;
             width: 80%;
+            padding: 15px 30px;
         }
     }
-
 
     h1 {
         font-size: 30px;
@@ -216,7 +228,7 @@ footer {
 
     footer {
         @include flexbox (column, center, center);
-        margin-top: 50px;
+
         padding: 40px 10px;
 
         div {

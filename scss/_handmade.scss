@@ -52,9 +52,9 @@ section.aplicados {
         }
 
         div.aplicado {
-            @include flexbox (row, center, center);
+            @include flexbox (column, center, center);
             gap: 2px;
-            margin: 5px;            
+                        
         }
     }
 
