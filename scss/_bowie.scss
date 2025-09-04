@@ -1,0 +1,14 @@
+div.galerias {
+    max-width: 95%;
+    margin: auto;
+
+    section.galeria {
+        display: flex;
+        margin: 10px;
+        gap: 10px;
+
+        img {
+            width: 33%;
+        }
+    }
+}

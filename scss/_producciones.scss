@@ -1,0 +1,67 @@
+$color-enlace: #ED7A77;
+
+//mixin 
+@mixin flexbox ($direction, $justify-content, $align-item) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $justify-content;
+}
+
+
+
+div.producciones {
+    max-width: 95%;
+    margin: auto;
+
+    a.produccion {
+        padding: 10px 20px;
+        background-color: $color-enlace;
+        color: white;
+        border-radius: 5px;
+
+        &:hover {
+            border: 2px solid $color-enlace;
+            ;
+            background-color: #fff !important;
+            color: $color-enlace !important;
+        }
+    }
+
+
+
+
+}
+
+
+//media queries
+@media screen and (max-width: 576px) {
+    div.producciones {
+        div.card {
+            div.card-body {
+                @include flexbox (column, center, center);
+                gap: 10px;
+                box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+
+
+                h5.card-title {
+                    text-align: center;
+
+                }
+
+                p.card-text {
+                    display: none;
+
+                }
+
+
+                a.produccion {
+                    padding: 5px 40px;
+                    border-radius: 5px;
+
+                }
+
+            }
+        }
+    }
+}

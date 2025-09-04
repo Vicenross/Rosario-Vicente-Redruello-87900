@@ -1,0 +1,61 @@
+//mixin 
+@mixin flexbox ($direction, $justify-content, $align-item) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $justify-content;
+}
+
+
+section.aplicados {
+    max-width: 80%;
+    margin: 50px auto;
+    max-height: 230px;
+    padding: 25px;
+    @include flexbox (row, center, center);
+    border-radius: 8px;
+    border: 2px solid black;
+
+    div.textoaplicados {
+        @include flexbox (column, flex-start, center);
+
+    }
+
+    div.aplicado {
+        @include flexbox (row, center, center);
+        gap: 20px;
+        margin: 15px;
+
+        img {
+            width: 136px;
+            height: 176px;
+        }
+    }
+}
+
+
+//media queries
+@media screen and (max-width: 750px) {
+
+    section.aplicados {
+        @include flexbox (column, center, center);
+        max-height: 100%;
+        max-width: 90%;
+        margin: 25px auto;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid black;
+
+        div.textoaplicados {
+            @include flexbox (column, flex-start, center);
+
+        }
+
+        div.aplicado {
+            @include flexbox (row, center, center);
+            gap: 2px;
+            margin: 5px;            
+        }
+    }
+
+}

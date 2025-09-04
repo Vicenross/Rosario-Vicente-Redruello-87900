@@ -1,0 +1,263 @@
+//imports
+@use "sobremi";
+@use "handmade";
+@use "producciones";
+@use "bowie";
+
+//variables
+$tipografia-ppal: "Poppins", sans-serif;
+$color-enlace: #ED7A77;
+
+
+//mixin 
+@mixin flexbox ($direction, $justify-content, $align-item) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $justify-content;
+}
+
+//extend
+
+%icono-tamaño {
+    font-size: 30px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $tipografia-ppal;
+    margin: auto;
+}
+
+h1 {
+    @include flexbox (row, center, center);
+    padding: 15px;
+    margin: 15px;
+    color: #000;
+    font-size: 60px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+//NAV
+
+header {
+    nav.navbar {
+        background: #fff;
+        max-width: 100%;
+        padding: 10px;
+        margin: auto;
+        box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.08);
+        z-index: 999999;
+
+        div.container-fluid {
+            a.navbar-brand {
+                color: $color-enlace;
+
+            }
+
+            button.navbar-toggler {
+                border: none;
+
+                &:focus {
+                    border: none;
+                    box-shadow: none;
+
+                }
+
+            }
+
+            div {
+                ul {
+                    margin-left: 30%;
+
+                    li {
+
+                        a {
+                            color: #000;
+                            font-size: 24px;
+                            font-weight: 300;
+                            text-decoration: none;
+                        }
+                    }
+
+                    li.active {
+                        a {
+                            color: $color-enlace !important;
+                            font-weight: 700;
+
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+
+
+main {
+    h1.minombre {
+        position: absolute;
+        top: 35vh;
+        justify-self: center;
+        color: #fff;
+        text-shadow: 5px 5px 18px black;
+    }
+
+    section.videospatch {
+        @include flexbox (row, center, center);
+        margin: 40px;
+        object-fit: cover;
+
+        video.videopatch {
+            width: 33%;
+            max-height: 80vh;
+            object-fit: cover;
+        }
+    }
+}
+
+
+
+//footer
+
+footer {
+    @include flexbox (row, space-between, center);
+    background: #fff;
+    max-width: 100% !important;
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.12);
+    padding: 40px;
+    margin-top: 150px;
+
+    div.redes {
+        @include flexbox (row, center, center);
+        gap: 22px;
+
+        .fa-instagram {
+            @extend %icono-tamaño;
+            color: #E1306C;
+        }
+
+
+        .fa-behance {
+            @extend %icono-tamaño;
+            color: #1769ff;
+        }
+
+        .fa-whatsapp {
+            @extend %icono-tamaño;
+            color: #25D366;
+        }
+    }
+
+    a {
+        font-size: 16px;
+        color: $color-enlace;
+        text-decoration: none;
+
+    }
+}
+
+
+//media queries
+@media screen and (max-width: 750px) {
+    body {
+        width: 100%;
+        margin: auto;
+    }
+
+    main {
+        section.videospatch {
+            margin: 40px auto;
+
+            video.compu {
+                display: none;
+
+            }
+
+            video.videopatch.celu {
+                width: 100%;
+                height: 50vh;
+                object-fit: cover;
+            }
+        }
+
+
+        h1.minombre {
+            position: absolute;
+            top: 35vh;
+            justify-self: center;
+            color: #fff;
+            text-shadow: 5px 5px 18px black;
+            font-size: 30px;
+            text-align: center;
+            width: 80%;
+        }
+    }
+
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    footer {
+        @include flexbox (column, center, center);
+        margin-top: 50px;
+        padding: 40px 10px;
+
+        div {
+            h3 {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+
+        div.redes {
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        a {
+            font-size: 16px;
+            text-align: center;
+
+
+        }
+    }
+
+    header {
+        nav.navbar {
+            div.container-fluid {
+                div {
+
+                    ul {
+                        margin-left: 5%;
+                        margin-top: 15px;
+
+                        li {
+
+                            a {
+                                font-size: 16px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
